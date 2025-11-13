@@ -1,0 +1,305 @@
+{
+    "info": {
+        "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+        "name": "Product Management API - ASP.NET Core",
+        "description": "Complete API collection for Product Management System with CRUD operations and third-party API integrations.\n\nAuthor: Surjeet Kumar\nDate: November 13, 2025",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Products API",
+            "item": [
+                {
+                    "name": "Get All Products",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/Products",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Products"
+                            ]
+                        },
+                        "description": "Retrieves a list of all products in the database."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Product by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/Products/1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Products",
+                                "1"
+                            ]
+                        },
+                        "description": "Retrieves a specific product by its ID."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Create Product",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"name\": \"MacBook Pro M3\",\n  \"description\": \"Latest MacBook Pro with M3 chip, 16GB RAM, 512GB SSD\",\n  \"price\": 1999.99,\n  \"category\": \"Electronics\",\n  \"brand\": \"Apple\",\n  \"stockQuantity\": 15,\n  \"sku\": \"APPL-MBP-M3-001\",\n  \"isActive\": true,\n  \"imageUrl\": \"https://example.com/images/macbook-pro-m3.jpg\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/Products",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Products"
+                            ]
+                        },
+                        "description": "Creates a new product in the database."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Update Product",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"id\": 1,\n  \"name\": \"Laptop Dell XPS 15 (Updated)\",\n  \"description\": \"High-performance laptop with 32GB RAM and 1TB SSD\",\n  \"price\": 1499.99,\n  \"category\": \"Electronics\",\n  \"brand\": \"Dell\",\n  \"stockQuantity\": 30,\n  \"sku\": \"DELL-XPS15-001\",\n  \"isActive\": true,\n  \"imageUrl\": \"https://example.com/images/dell-xps15-updated.jpg\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/api/Products/1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Products",
+                                "1"
+                            ]
+                        },
+                        "description": "Updates an existing product by ID."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Delete Product",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/Products/1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "Products",
+                                "1"
+                            ]
+                        },
+                        "description": "Deletes a product from the database by ID."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "CRUD operations for Product management"
+        },
+        {
+            "name": "External API Integration",
+            "item": [
+                {
+                    "name": "Get Weather Data",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/weather?latitude=52.52&longitude=13.41",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "weather"
+                            ],
+                            "query": [
+                                {
+                                    "key": "latitude",
+                                    "value": "52.52",
+                                    "description": "Latitude coordinate (default: Berlin)"
+                                },
+                                {
+                                    "key": "longitude",
+                                    "value": "13.41",
+                                    "description": "Longitude coordinate (default: Berlin)"
+                                }
+                            ]
+                        },
+                        "description": "Calls the Open-Meteo Weather API to get current weather data and logs the request/response."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Weather Data - New York",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/weather?latitude=40.7128&longitude=-74.0060",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "weather"
+                            ],
+                            "query": [
+                                {
+                                    "key": "latitude",
+                                    "value": "40.7128",
+                                    "description": "New York latitude"
+                                },
+                                {
+                                    "key": "longitude",
+                                    "value": "-74.0060",
+                                    "description": "New York longitude"
+                                }
+                            ]
+                        },
+                        "description": "Get weather data for New York City."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Exchange Rates - USD",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/exchange-rates?baseCurrency=USD",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "exchange-rates"
+                            ],
+                            "query": [
+                                {
+                                    "key": "baseCurrency",
+                                    "value": "USD",
+                                    "description": "Base currency code"
+                                }
+                            ]
+                        },
+                        "description": "Calls the Exchange Rate API to get current exchange rates and logs the request/response."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get Exchange Rates - EUR",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/exchange-rates?baseCurrency=EUR",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "exchange-rates"
+                            ],
+                            "query": [
+                                {
+                                    "key": "baseCurrency",
+                                    "value": "EUR",
+                                    "description": "Base currency code (Euro)"
+                                }
+                            ]
+                        },
+                        "description": "Get exchange rates with EUR as base currency."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get All API Logs",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/logs",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "logs"
+                            ]
+                        },
+                        "description": "Retrieves all logged external API calls (last 100)."
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get API Log by ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "{{baseUrl}}/api/ExternalApi/logs/1",
+                            "host": [
+                                "{{baseUrl}}"
+                            ],
+                            "path": [
+                                "api",
+                                "ExternalApi",
+                                "logs",
+                                "1"
+                            ]
+                        },
+                        "description": "Retrieves a specific API log by its ID."
+                    },
+                    "response": []
+                }
+            ],
+            "description": "Third-party API integration endpoints"
+        }
+    ],
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://localhost:7000",
+            "type": "string",
+            "description": "Base URL for the API (update port number as needed)"
+        }
+    ]
+}
