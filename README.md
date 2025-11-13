@@ -430,7 +430,7 @@ dotnet ef database update
 ## 📞 Contact
 
 **Developer:** Surjeet Kumar  
-**Email:** surjeethkumar4@gmail.com.com  
+**Email:** surjeethkumar4@gmail.com
 **Date:** November 13, 2025
 
 ---
